@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Perhiasan Emas - Koleksi Lengkap Emas 24K</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-crown"></i>
+                <span>✨ PERHIASAN EMAS MEWAH</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#beranda" class="nav-link active" data-section="beranda">🏠 Beranda</a></li>
+                <li><a href="#produk" class="nav-link" data-section="produk">📦 Produk</a></li>
+                <li><a href="#kontak" class="nav-link" data-section="kontak">📞 Kontak</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">✨ Perhiasan Emas Pilihan</h1>
+            <p class="hero-subtitle">Koleksi eksklusif emas 24K dengan desain modern dan elegan</p>
+            <button class="cta-button" onclick="scrollToSection('produk')">Lihat Koleksi Kami</button>
+        </div>
+        <div class="hero-background"></div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <i class="fas fa-gem"></i>
+                <h3>Emas 24K Asli</h3>
+                <p>Semua produk dijamin emas murni 24 karat dengan sertifikat autentik</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Garansi Seumur Hidup</h3>
+                <p>Setiap pembelian dilindungi dengan garansi seumur hidup</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-truck"></i>
+                <h3>Pengiriman Aman</h3>
+                <p>Pengiriman tersertifikasi dengan asuransi penuh</p>
+            </div>
+            <div class="feature-card">
+                <i class="fas fa-headset"></i>
+                <h3>Layanan Pelanggan 24/7</h3>
+                <p>Tim profesional siap membantu Anda kapan saja</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produk" class="products">
+        <div class="section-header">
+            <h2>Koleksi Produk Kami</h2>
+            <p>Pilihan terbaik perhiasan emas untuk setiap momen spesial Anda</p>
+        </div>
+        <div class="products-grid" id="productsGrid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Hubungi Kami</h2>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. Raja Perhiasan No. 123, Jakarta Pusat, 12190</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>+62 21 1234 5678</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@perhiasanemas.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Jumat: 09:00 - 18:00</p>
+                        <p>Sabtu: 10:00 - 17:00</p>
+                        <p>Minggu: Tutup</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <input type="text" placeholder="Nama Anda" required>
+                <input type="email" placeholder="Email Anda" required>
+                <input type="tel" placeholder="Nomor Telepon" required>
+                <textarea placeholder="Pesan Anda" rows="5" required></textarea>
+                <button type="submit" class="submit-btn">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-details">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-category" id="modalCategory"></p>
+                    <p class="modal-description" id="modalDescription"></p>
+                    
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <span class="label">Berat:</span>
+                            <span id="modalWeight"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Kadar Emas:</span>
+                            <span id="modalKadar"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Harga:</span>
+                            <span id="modalPrice" class="price"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Kode Produk:</span>
+                            <span id="modalCode" class="code"></span>
+                        </div>
+                    </div>
+
+                    <button class="qr-button" id="qrButton">🔲 Lihat Etalase (QR Code)</button>
+                    
+                    <div id="qrContainer" class="qr-container" style="display: none;">
+                        <h4>Kode Etalase - Tunjukkan ke Toko</h4>
+                        <div id="qrCode"></div>
+                        <p class="qr-info">Tunjukkan QR code ini ke staff toko untuk verifikasi produk</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Toko Perhiasan Emas Mewah. Semua hak dilindungi.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/qrcode.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
